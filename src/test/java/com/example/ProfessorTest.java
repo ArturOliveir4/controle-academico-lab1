@@ -2,45 +2,45 @@ package com.example;
 
 import java.time.LocalTime;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import org.junit.Before;
+import org.junit.Test;
 
-class ProfessorTest {
+public class ProfessorTest {
 
     private Professor professor;
     private Disciplina disciplina;
     private Horario horario;
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
         professor = new Professor("Sabrina");
         disciplina = new Disciplina("MAP");
         horario = new Horario("Sexta", LocalTime.of(7, 0), LocalTime.of(9, 0));
     }
 
     @Test
-    void deveCriarProfessorComNome(){
+    public void deveCriarProfessorComNome(){
         assertEquals("Sabrina", professor.getNome());
     }
 
     @Test
-    void deveAdicionarDisciplinaAoProfessor(){
+    public void deveAdicionarDisciplinaAoProfessor(){
         professor.setDisciplinas(disciplina);
         assertEquals(1, professor.getDisciplinas().size());
         assertTrue(professor.getDisciplinas().contains(disciplina));
     }
 
     @Test
-    void deveListarDisciplinasDoProfessor(){
+    public void deveListarDisciplinasDoProfessor(){
         professor.setDisciplinas(disciplina);
         String resultado = professor.verDisciplinas();
         assertTrue(resultado.contains("MAP"));
     }
 
     @Test
-    void deveListarHorariosDasDisciplinasDoProfessor(){
+    public void deveListarHorariosDasDisciplinasDoProfessor(){
         disciplina.setHorarios(horario);
         professor.setDisciplinas(disciplina);
         String resultado = professor.verHorarios();
