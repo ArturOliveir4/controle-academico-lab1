@@ -43,5 +43,4 @@ public class Horario {
     public String toString() {
         return "Horário: " + horaInicio + " - " + horaFim;
     }
-
 }

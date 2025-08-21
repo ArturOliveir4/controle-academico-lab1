@@ -54,7 +54,22 @@ public class Professor {
         return sb.toString();
     }
 
-    
-
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Professor: ").append(nome).append("\n");
+        sb.append("Disciplinas: ");
+        
+        if(disciplinas.isEmpty()){
+            sb.append("Sem disciplinas!");
+        }else{
+            for(Disciplina d : disciplinas){
+                sb.append(d.getNome()).append(", "); 
+            }
+            sb.setLength(sb.length() - 2);
+        }
+        
+        return sb.toString();
+    }
 
 }

@@ -55,5 +55,22 @@ public class Aluno {
         }
         return sb.toString();
     }
-    
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Aluno: ").append(nome).append("\n");
+        sb.append("Disciplinas: ");
+        
+        if(disciplinas.isEmpty()){
+            sb.append("Sem disciplinas!");
+        }else{
+            for(Disciplina dis : disciplinas){
+                sb.append(dis.getNome()).append(", "); 
+            }
+            sb.setLength(sb.length() - 2);
+        }
+        
+        return sb.toString();
+    }
 }

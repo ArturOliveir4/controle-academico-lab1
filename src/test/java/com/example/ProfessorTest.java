@@ -7,44 +7,43 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class AlunoTest {
+class ProfessorTest {
 
-    private Aluno aluno;
+    private Professor professor;
     private Disciplina disciplina;
     private Horario horario;
 
     @BeforeEach
     void setUp() {
-        aluno = new Aluno("Davi");
+        professor = new Professor("Sabrina");
         disciplina = new Disciplina("MAP");
         horario = new Horario("Sexta", LocalTime.of(7, 0), LocalTime.of(9, 0));
     }
 
     @Test
-    void deveCriarAlunoComNome(){
-        assertEquals("Davi", aluno.getNome());
+    void deveCriarProfessorComNome(){
+        assertEquals("Sabrina", professor.getNome());
     }
 
     @Test
-    void deveAdicionarDisciplinaAoAluno(){
-        aluno.setDisciplinas(disciplina);
-        assertEquals(1, aluno.getDisciplinas().size());
-        assertTrue(aluno.getDisciplinas().contains(disciplina));
-        assertEquals(1, disciplina.getAlunos().size());
+    void deveAdicionarDisciplinaAoProfessor(){
+        professor.setDisciplinas(disciplina);
+        assertEquals(1, professor.getDisciplinas().size());
+        assertTrue(professor.getDisciplinas().contains(disciplina));
     }
 
     @Test
-    void deveListarDisciplinasDoAluno(){
-        aluno.setDisciplinas(disciplina);
-        String resultado = aluno.verDisciplinas();
+    void deveListarDisciplinasDoProfessor(){
+        professor.setDisciplinas(disciplina);
+        String resultado = professor.verDisciplinas();
         assertTrue(resultado.contains("MAP"));
     }
 
     @Test
-    void deveListarHorariosDasDisciplinasDoAluno(){
+    void deveListarHorariosDasDisciplinasDoProfessor(){
         disciplina.setHorarios(horario);
-        aluno.setDisciplinas(disciplina);
-        String resultado = aluno.verHorarios();
+        professor.setDisciplinas(disciplina);
+        String resultado = professor.verHorarios();
         assertTrue(resultado.contains("Disciplina: MAP"));
         assertTrue(resultado.contains("Sexta | 07:00 - 09:00"));
     }

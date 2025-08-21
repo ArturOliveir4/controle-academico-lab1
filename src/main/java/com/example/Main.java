@@ -4,6 +4,8 @@ import java.time.LocalTime;
 
 public class Main {
     public static void main(String[] args) {
+        // Alguns instâncias das classes desenvolvidas
+
         Professor joao = new Professor("Joao");
 
         Aluno artur = new Aluno("Artur");
@@ -35,6 +37,5 @@ public class Main {
         System.out.println(artur.verHorarios());
 
         System.out.println(leda.numeroAlunos());
-
     }
 }
