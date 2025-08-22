@@ -49,11 +49,10 @@ public class ProfessorTest {
     }
 
     @Test
-    public void deveFalharAoVerificarHorarioIncorreto() {
+    public void deveFalharAoVerificarHorarioIncorreto(){
         disciplina.setHorarios(horario);
         professor.setDisciplinas(disciplina);
         String resultado = professor.verHorarios();
-        assertTrue(resultado.contains("Sábado")); // Está errado, porque o horário é "Sexta"
+        assertTrue(resultado.contains("Sábado")); 
     }
-
 }

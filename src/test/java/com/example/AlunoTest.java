@@ -48,4 +48,12 @@ public class AlunoTest {
         assertTrue(resultado.contains("Disciplina: MAP"));
         assertTrue(resultado.contains("Sexta | 07:00 - 09:00"));
     }
+
+    @Test
+    public void deveFalharAoVerificarHorarioIncorreto(){
+        disciplina.setHorarios(horario);
+        aluno.setDisciplinas(disciplina);
+        String resultado = aluno.verHorarios();
+        assertTrue(resultado.contains("Sábado")); 
+    }
 }

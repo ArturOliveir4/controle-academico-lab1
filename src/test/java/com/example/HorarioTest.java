@@ -29,4 +29,10 @@ public class HorarioTest {
         assertTrue(resultado.contains("07:00"));
         assertTrue(resultado.contains("09:00"));
     }
+
+    @Test
+    public void deveFalharAoVerificarDiaIncorreto(){
+        assertEquals("Sexta", horario.getDia());
+    }
+
 }

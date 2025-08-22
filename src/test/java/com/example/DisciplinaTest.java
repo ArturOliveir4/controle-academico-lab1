@@ -51,4 +51,10 @@ public class DisciplinaTest {
         String resultado = disciplina.verAlunos();
         assertTrue(resultado.contains("Artur"));
     }
+
+    @Test
+    public void deveFalharAoVerificarNomeIncorretoDaDisciplina(){
+        assertEquals("POO", disciplina.getNome()); 
+    }
+
 }
