@@ -1,8 +1,9 @@
-package com.example;
+package expert.model.entities;
 
 import java.time.LocalTime;
 
 public class Horario {
+    
     private String dia;
     private LocalTime horaInicio;
     private LocalTime horaFim;
@@ -10,6 +11,12 @@ public class Horario {
     public Horario() {}
 
     public Horario(String dia, LocalTime horaInicio, LocalTime horaFim){
+        if (dia == null || horaInicio == null || horaFim == null) {
+            throw new IllegalArgumentException("Dia ou horário não podem ser null");
+        }
+        if (horaFim.isBefore(horaInicio)) {
+            throw new IllegalArgumentException("Hora de fim não pode ser antes da hora de início");
+        }        
         this.dia = dia;
         this.horaInicio = horaInicio;
         this.horaFim = horaFim;
@@ -20,6 +27,7 @@ public class Horario {
     }
 
     public String getDia(){
+        
         return this.dia;
     }
 
@@ -41,6 +49,6 @@ public class Horario {
 
     @Override
     public String toString() {
-        return "Horário: " + horaInicio + " - " + horaFim;
+        return dia + " - Horário: " + horaInicio + " - " + horaFim;
     }
 }

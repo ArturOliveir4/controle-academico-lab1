@@ -1,0 +1,56 @@
+# =====================
+# Build / Target (Maven)
+# =====================
+target/
+bin/
+*.class
+*.jar
+*.war
+*.ear
+
+# =====================
+# Maven
+# =====================
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# =====================
+# VS Code
+# =====================
+.vscode/
+.history/
+
+# =====================
+# Eclipse
+# =====================
+.settings/
+.project
+.classpath
+.metadata/
+*.launch
+bin/
+
+# =====================
+# IntelliJ IDEA
+# =====================
+*.iml
+.idea/
+out/
+
+# =====================
+# Windows
+# =====================
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# =====================
+# Logs
+# =====================
+*.log
